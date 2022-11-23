@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,33 +8,56 @@
     <link rel="stylesheet" href="./assets/style.css">
     <!-- link to bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <title>Weather Dashboard</title>
 </head>
+
 <body>
     <header>
         <div>
             <h1 class="text-center">Weather Dashboard</h1>
-        </div>   
+        </div>
     </header>
 
-    <main class="mainCont">
-        <section class="search-panel col-12 col-md-3 col-lg-3 col-xl-3 border">
-            <div class="search-box">
-                <h3>Search for a city:</h3>
-                <form>
-                    <input placeholder="Portland..">
-                    <button>Search</button>
-                </form>
+    <!-- city search panel -->
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-3 col-md-3 col-lg-3 search-panel">
+                <div class="bg-light search-box">
+                    <h3>Search for a city:</h3>
+                    <form class="input-group justify-content-center">
+                        <div class="form-outline">
+                            <input type="search" class="form-control city-search" placeholder="Portland..." />
+                        </div>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-search">🔍</i>
+                        </button>
+                    </form>
+                    <div class="city-list-container">
+                        <ul class="city-list-group"></ul>
+                    </div>
+                </div>
             </div>
-        </section>
-        <!-- City weather column -->
-        <section class="row col-12 col-md-9 col-lg-9 xol-xl-9 border colTwo">
 
-        </section>
+        <!-- City weather panel -->
+            <div class="col-12 col-sm-9 col-md-9 col-lg-9 results-panel">
+                <div class="weatherToday">
+                    <div class="card">
+                        <h2 class="card-header todayCity"></h2>
+                        <h3 class="card-header todayDate"></h3>
+                        <img class="icons"/>
+                        <section class="card-body weatherTodayBody"></section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </main>
-<!-- link to the Jquery library -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<!-- links to the JS file -->
-<script type="text/javascript" src="./assets/js/script.js"></script>
+    <!-- link to the Jquery library -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- links to the JS file -->
+    <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>

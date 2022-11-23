@@ -4,3 +4,18 @@ header {
     border-bottom: solid;
     color: black;
 }
+
+.search-box {
+    text-align: center;
+    background-color: #dcdcdc;
+    margin: 10px 0 0 0;
+}
+
+.city-search:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.results-panel {
+    margin: 10px 0 0 0;
+}
