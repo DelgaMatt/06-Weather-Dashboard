@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap" rel="stylesheet">
+
     <!-- link to bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
@@ -23,13 +27,13 @@
     <main class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 search-panel">
-                <div class="bg-light search-box">
+                <div class="search-box">
                     <h3>Search for a city:</h3>
                     <form class="input-group justify-content-center">
                         <div class="form-outline">
                             <input type="search" class="form-control city-search" placeholder="Portland..." />
                         </div>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button " class="btn btn-primary">
                             <i class="fas fa-search">🔍</i>
                         </button>
                     </form>
@@ -41,14 +45,15 @@
 
         <!-- City weather panel -->
             <div class="col-12 col-sm-9 col-md-9 col-lg-9 results-panel">
-                <div class="weatherToday">
+                <div class="col weatherToday">
                     <div class="card">
-                        <h2 class="card-header todayCity"></h2>
-                        <h3 class="card-header todayDate"></h3>
+                        <h2 class="card-header todayCity">Portland</h2>
+                        <h3 class="card-header todayDate">11.23.22</h3>
                         <img class="icons"/>
-                        <section class="card-body weatherTodayBody"></section>
+                        <section class="card-body bg-light weatherTodayBody">humidity <br> temperature</section>
                     </div>
-
+                </div>
+                <div class="row forcastFive">
                 </div>
             </div>
         </div>

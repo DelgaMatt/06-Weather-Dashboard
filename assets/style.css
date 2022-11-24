@@ -1,14 +1,19 @@
+* {
+    font-family: 'BhuTaka';
+}
+
 header {
     background-color: #2980b9;
     padding: 20px;
-    border-bottom: solid;
-    color: black;
+    border-bottom: solid black;
+    color: white;
 }
 
+.search-panel,
 .search-box {
     text-align: center;
-    background-color: #dcdcdc;
     margin: 10px 0 0 0;
+    background-color: lightgray;
 }
 
 .city-search:hover {
@@ -19,3 +24,4 @@ header {
 .results-panel {
     margin: 10px 0 0 0;
 }
+
