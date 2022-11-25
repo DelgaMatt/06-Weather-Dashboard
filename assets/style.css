@@ -1,5 +1,9 @@
+:root {
+    --border: solid red;
+}
+
 * {
-    font-family: 'BhuTaka';
+    font-family: 'BhuTaka', 'sans';
 }
 
 header {
@@ -21,7 +25,17 @@ header {
     opacity: 50%;
 }
 
+.city-list-container {
+    border: var(--border);
+}
+
 .results-panel {
-    margin: 10px 0 0 0;
+    margin: 10px 0 10px 0;
+    border: var(--border);
+}
+
+.forcastFive {
+    border: var(--border);
+    padding: 10px 0 0 10px;
 }
 

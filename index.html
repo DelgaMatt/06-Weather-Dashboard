@@ -9,7 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap" rel="stylesheet">
-
+    <!-- link to jQuery UI -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <!-- link to bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
@@ -24,7 +28,7 @@
     </header>
 
     <!-- city search panel -->
-    <main class="container-fluid">
+    <main class="container-fluid min-vh-100">
         <div class="row">
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 search-panel">
                 <div class="search-box">
@@ -33,12 +37,12 @@
                         <div class="form-outline">
                             <input type="search" class="form-control city-search" placeholder="Portland..." />
                         </div>
-                        <button type="button " class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" id="search">
                             <i class="fas fa-search">🔍</i>
                         </button>
                     </form>
                     <div class="city-list-container">
-                        <ul class="city-list-group"></ul>
+                        <ul class="city-list"></ul>
                     </div>
                 </div>
             </div>
@@ -53,7 +57,8 @@
                         <section class="card-body bg-light weatherTodayBody">humidity <br> temperature</section>
                     </div>
                 </div>
-                <div class="row forcastFive">
+                <div class="flex-row forcastFive">
+                </p>
                 </div>
             </div>
         </div>
