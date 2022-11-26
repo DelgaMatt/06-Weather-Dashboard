@@ -11,14 +11,15 @@
 //  post specified data onto main card and forcast cards
 //list searched city, save searched city and info pulled above onto local history
 //
-
+localStorage.clear();
 var city = "";
 var cityList = [];
-var cityListEl = $(".city-list-container");
+var cityHistCont = $(".city-history-cont");
 var searchButton = $("#search");
 
 var date = dayjs().format('dddd, MMMM DD YYYY');
-var time = dayjs().format('h:mm:ss')
+var time = dayjs().format('h:mm:ss');
+// console.log(dayjs());
 
 function getApi() {
     var apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=&appid=25c2936adbc148c96a60f0af93156bc8"
@@ -35,19 +36,25 @@ $('#search').on('click', function (event) {
     };
     //adding recently searched city onto cityList array -> will display as buttons
     cityList.push(city);
+    // cityList = cityList.concat(city);
 
     localStorage.setItem("city", JSON.stringify(city));
     console.log(cityList);
+    cityHistory();
 });
 
 //creating buttons for every city searched
 function cityHistory () {
     // cityHistory.empty();
-    for (let i = 0; i < cityList.length; index++) {
-        $(".city-list-container").append('<button class="list-group-item">' + city)
-        
-        // var listEl = $('<button>');
-        // // listEl.addClass();
+    for (let i = 0; i < cityList.length; i++) {
+        // $(".city-list-container").append('<button class="list-group-item">' + city)
+        var listItemEl = document.createElement('li');
+        var cityBtn = document.createElement('button');
+        listItemEl.textContent = (city[i]);
+
+        cityHistCont.append(listItemEl);
+        listItemEl.append(cityBtn);
+        // listEl.addClass();
         // listEl.text(cityList[i]);
 
     }
