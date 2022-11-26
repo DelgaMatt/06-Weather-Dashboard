@@ -20,6 +20,10 @@ header {
     background-color: lightgray;
 }
 
+/* .form-outline {
+    border: var(--border);
+} */
+
 .city-search:hover {
     cursor: pointer;
     opacity: 50%;
