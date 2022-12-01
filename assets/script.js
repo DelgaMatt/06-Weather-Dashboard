@@ -7,68 +7,86 @@
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
 
-//when search button, fetch api data/specific information
-//  post specified data onto main card and forcast cards
-//list searched city, save searched city and info pulled above onto local history
-//
+//1. get weather api to function properly
+//2. get city weather to display on main card
+//3. fix button generation issue//get them to function as search queries
+//4. link forecast to/build forcast cards
+
 localStorage.clear();
-var city = "";
-var cityList = [];
-var cityHistCont = $(".city-history-cont");
-var searchButton = $("#search");
+let history = JSON.parse(window.localStorage.getItem("history")) || [];
+
+var cityHistCont = $(".cityHistoryCont");
+var searchButton = $("#search"); ///same as below
+//var searchButton = document.getElementById('search');
 
 var date = dayjs().format('dddd, MMMM DD YYYY');
 var time = dayjs().format('h:mm:ss');
-// console.log(dayjs());
-
-function getApi() {
-    var apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=&appid=25c2936adbc148c96a60f0af93156bc8"
-}
+//var apiURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=&appid=25c2936adbc148c96a60f0af93156bc8"; //using lat and long to track weather data
 
 //event listener for button, adding content onto local storage
-$('#search').on('click', function (event) {
+searchButton.on('click', function (event) {
     event.preventDefault();
-    
-    var city = $(this).parent(".form-outline").siblings(".city-search").val().trim();
-    if (city === "") {
-        alert("please re enter a valid city name");
-        return;
-    };
-    //adding recently searched city onto cityList array -> will display as buttons
-    cityList.push(city);
-    // cityList = cityList.concat(city);
+    let cityName = document.querySelector("#cityName").value;
+        if (cityName === "") {
+            return;
+        };
+    console.log("cityName: ", cityName);
+    history.push(cityName);
 
-    localStorage.setItem("city", JSON.stringify(city));
-    console.log(cityList);
+    window.localStorage.setItem("history", JSON.stringify(history));
+    console.log(history);
+    getCity(cityName);
     cityHistory();
-});
+
+    $("#cityName").val("");
+    });
+
+//--------calls to weather API------>
+function getCity(cityName) {
+    //----- geocoding for lat and lon of city----->
+    var geoCityApi = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=25c2936adbc148c96a60f0af93156bc8";
+    console.log(geoCityApi);
+    fetch(geoCityApi)
+        .then(function (response) {
+        return response.json();
+        })
+        .then(function (data) {
+
+            const lat = data[0].lat;
+            console.log(lat);
+            const lon = data[0].lon;
+            console.log(lon);
+            var latlon = lat.toString() + ", " + lon.toString();
+            window.localStorage.setItem(cityName, latlon);
+
+            console.log(data);
+            console.log(latlon);
+            getForecast(lat, lon);
+        });
+};
+
+
+function getForecast(lat, lon) {
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=25c2936adbc148c96a60f0af93156bc8";
+    console.log(apiURL);
+};
 
 //creating buttons for every city searched
 function cityHistory () {
-    // cityHistory.empty();
-    for (let i = 0; i < cityList.length; i++) {
-        // $(".city-list-container").append('<button class="list-group-item">' + city)
-        var listItemEl = document.createElement('li');
-        var cityBtn = document.createElement('button');
-        listItemEl.textContent = (city[i]);
+    for (let index = 0; index < history.length; index++) {
+        let historyList = $("<button class=col list-item>").text(history[index]);
 
-        cityHistCont.append(listItemEl);
-        listItemEl.append(cityBtn);
-        // listEl.addClass();
-        // listEl.text(cityList[i]);
+        cityHistCont.append(historyList);
+    };
 
-    }
-}
+    $(".list-item").on("click", function(event) {
+        event.preventDefault();
+        window.localStorage.getItem(cityName, latlon)
+        // getForecast(latlon);
+    });
 
+};
 
+// function forcastCards() {
 
-
-// function to list history of cities searched
-// var cityListEl = $("#city-list")
-
-// var printCity = function(name) {
-//     var listEl = $('<li>');
-//     var listDetail = name;
-//     listEl.addClass("city-list-item").text(listDetail);
-//     listEl.appendChild(cityListEl);
-// }
+// };
