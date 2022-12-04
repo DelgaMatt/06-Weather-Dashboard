@@ -1,6 +1,6 @@
-:root {
+/* :root {
     --border: solid red;
-}
+} */
 
 * {
     font-family: 'BhuTaka', 'sans';
@@ -20,6 +20,9 @@ header {
     background-color: lightgray;
 }
 
+ul {
+    list-style: none;
+}
 /* .form-outline {
     border: var(--border);
 } */
@@ -36,10 +39,10 @@ header {
 .results-panel {
     margin: 10px 0 10px 0;
     border: var(--border);
+    visibility: hidden;
 }
 
 .forcastFive {
     border: var(--border);
     padding: 10px 0 0 10px;
 }
-
