@@ -61,12 +61,12 @@ function getCity(cityName) {
 
             console.log(data);
             console.log(latlon);
-            getForecast(lat, lon);
+            weatherNow (lat, lon);
+            // getForcast (lat, lon);
         });
 };
 
-
-function getForecast(lat, lon) {
+function weatherNow(lat, lon) {
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=25c2936adbc148c96a60f0af93156bc8";
     console.log(apiURL);
     $(".results-panel").addClass("visible");
@@ -90,24 +90,44 @@ function getForecast(lat, lon) {
             $(".humidity").text("Humiditidy: " + humidity + "%");
             var wind = data.wind.speed;
             $(".wind").text("Wind Speeds: " + wind + "mph")
+    })
+
+    var forcastApi = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=25c2936adbc148c96a60f0af93156bc8";
+    console.log(forcastApi);
+
+    fetch(forcastApi)
+        .then(function(response) {
+            return response.json();
+        })
+
+        .then(function(data) {
+            $(".forcasthead").text("5 Day Forecast");
+
+            for (let index = 0; index < data.list.length; index++) {
+                var temp = data.list[index].main.temp;
+
+                var humid = data.list[index].main.humidity;
+
+                var wind = data.list[index].wind.speed;
+
+            }
         })
 };
 
-//creating buttons for every city searched
 function cityHistory() {
     for (let index = 0; index < history.length; index++) {
-        let historyList = $("<button class=col list-item>").text(history[index]);
+        let historyList = $("<button class=col justify-center list-item w-100>").text(history[index]);
 
         cityHistCont.append(historyList);
     };
 
-    $(".list-item").on("click", function(event) {
-        event.preventDefault();
-        window.localStorage.getItem(cityName, latlon)
-        // getForecast(latlon);
-    });
+    // $(".list-item").on("click", function(event) {
+    //     event.preventDefault();
+    //     var myWeatherData = window.localStorage.getItem(cityName, lat, lon);
+    //     console.log(typeof myWeatherData);
 
 
+    // });
 };
 
 // function forcastCards() {

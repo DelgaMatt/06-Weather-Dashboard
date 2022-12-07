@@ -31,6 +31,10 @@ ul {
     cursor: pointer;
     opacity: 50%;
 }
+/* .cityHistoryCont {
+    display: flex;
+    flex-direction: column;
+} */
 
 .city-list-container {
     border: var(--border);
