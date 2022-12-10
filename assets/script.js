@@ -12,8 +12,7 @@
 //3. fix button generation issue//get them to function as search queries
 //4. link forecast to/build forcast cards
 
-localStorage.clear();
-let history = JSON.parse(window.localStorage.getItem("history")) || [];
+let history = JSON.parse(localStorage.getItem("history")) || [];
 
 var cityHistCont = $(".cityHistoryCont");
 var searchButton = $("#search"); ///same as below
@@ -31,12 +30,17 @@ searchButton.on('click', function (event) {
             return;
         };
     console.log("cityName: ", cityName);
-    history.push(cityName);
 
-    window.localStorage.setItem("history", JSON.stringify(history));
+    if (!history.includes(cityName)) {
+
+        history.push(cityName);
+        window.localStorage.setItem("history", JSON.stringify(history));
+        cityHistory();
+    }
+    
     console.log(history);
     getCity(cityName);
-    cityHistory();
+    
     
     $("#cityName").val("");
     });
@@ -48,7 +52,9 @@ function getCity(cityName) {
     console.log(geoCityApi);
     fetch(geoCityApi)
         .then(function (response) {
+        console.log(response);
         return response.json();
+        
         })
         .then(function (data) {
 
@@ -102,34 +108,40 @@ function weatherNow(lat, lon) {
 
         .then(function(data) {
             $(".forcasthead").text("5 Day Forecast");
-
-            for (let index = 0; index < data.list.length; index++) {
+            var num = 1;
+            for (let index = 0; index < data.list.length; index+=8) {
                 var temp = data.list[index].main.temp;
+            
+            $("#day" + num + "temp").text("Temperature: " + temp + " F")
+                console.log(temp);
 
                 var humid = data.list[index].main.humidity;
 
                 var wind = data.list[index].wind.speed;
-
+            num++;
             }
         })
+
+
 };
 
 function cityHistory() {
+    cityHistCont.html("");
     for (let index = 0; index < history.length; index++) {
         let historyList = $("<button class=col justify-center list-item w-100>").text(history[index]);
-
+        
         cityHistCont.append(historyList);
     };
-
+    
     // $(".list-item").on("click", function(event) {
     //     event.preventDefault();
     //     var myWeatherData = window.localStorage.getItem(cityName, lat, lon);
     //     console.log(typeof myWeatherData);
 
-
+   
     // });
 };
-
+ cityHistory();
 // function forcastCards() {
 
 // };
