@@ -40,8 +40,8 @@
                         </div>            
                     </form>
                     <div>
-                        <ul class="cityHistoryCont">
-                        </ul>
+                        <div id="cityHistoryCont">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,10 +50,10 @@
             <div class="col-12 col-sm-9 col-md-9 col-lg-9 results-panel">
                 <div class="col weatherToday">
                     <div class="card">
-                        <h1 class="card-header font-weight-bold todayCity"></h1><img id="icons"/>
+                        <h1 class="card-header todayCity"></h1>
                         <h4 class="card-header todayDate"></h4>
                         <ul class="card-body bg-light weatherTodayBody">
-                            <li class="condition"></li>
+                            <li id="icon"><img id="wicon" src="" alt="Weather icon"></li>
                             <li class="temp"></li>
                             <li class="humidity"></li>
                             <li class="wind"></li>
@@ -62,35 +62,34 @@
                 </div>
 
                     <h4 class="forcasthead text-center m-3"></h4>
-
-                    <!-- Forcast Cards -->
-                    <div class="forcastList row justify-content-around">
-                        <div class="card col-2">
-                            <h1 class="card-header font-weight-bold" id="day1city"></h1><img id="icons"/>
+               <!-- Forcast Cards -->
+                    
+                    <div class="forcastList row mt-5px justify-content-around">
+                        <div class="card">
                             <h4 class="card-header" id="day1date"></h4>
-                            <ul class="card-body bg-light">
-                                <li id="day1cond"></li>
+                            <ul class="card-body bg-light h-100">
+                                <li><img id="day1icon"src="" alt="Weather icon"></li>
                                 <li id="day1temp"></li>
                                 <li id="day1humidity"></li>
                                 <li id="day1wind"></li>
                             </ul>
                         </div>
 
-                        <div class="card col-2">
-                            <h1 class="card-header font-weight-bold" id="day2city"></h1><img id="icons"/>
+                        <div class="card">
                             <h4 class="card-header" id="day2date"></h4>
                             <ul class="card-body bg-light">
-                                <li id="day2cond"></li>
+                                <li><img id="day2icon" src="" alt="Weather icon"></li>
                                 <li id="day2temp"></li>
                                 <li id="day2humidity"></li>
                                 <li id="day2wind"></li>
                             </ul>
                         </div>
 
-                        <div class="card col-2">
-                            <h1 class="card-header font-weight-bold" id="day3city"></h1><img id="icons"/>
+                        <div class="card">
+
                             <h4 class="card-header" id="day3date"></h4>
                             <ul class="card-body bg-light">
+                                <li><img id="day3icon" src="" alt="Weather icon"></li>
                                 <li id="day3cond"></li>
                                 <li id="day3temp"></li>
                                 <li id="day3humidity"></li>
@@ -98,28 +97,29 @@
                             </ul>
                         </div>
 
-                        <div class="card col-2">
-                            <h1 class="card-header font-weight-bold" id="day4city"></h1><img id="icons"/>
+                        <div class="card">
+
                             <h4 class="card-header" id="day4date"></h4>
                             <ul class="card-body bg-light">
-                                <li id="day4cond"></li>
+                                <li><img id="day4icon" src="" alt="Weather icon"></li>
                                 <li id="day4temp"></li>
                                 <li id="day4humidity"></li>
                                 <li id="day4wind"></li>
                             </ul>
                         </div>
 
-                        <div class="card col-2">
-                            <h1 class="card-header font-weight-bold" id="day5city"></h1><img id="icons"/>
+                        <div class="card">
+
                             <h4 class="card-header" id="day5date"></h4>
                             <ul class="card-body bg-light">
-                                <li id="day5cond"></li>
+                                <li><img id="day5icon" src="" alt="Weather icon"></li>
                                 <li id="day5temp"></li>
                                 <li id="day5humidity"></li>
                                 <li id="day5wind"></li>
                             </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

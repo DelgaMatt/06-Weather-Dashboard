@@ -20,33 +20,45 @@ header {
     background-color: lightgray;
 }
 
-ul {
+.list-item {
     list-style: none;
 }
-/* .form-outline {
-    border: var(--border);
-} */
+
+ul {
+    padding-bottom: 5px;
+    list-style: none;
+}
 
 .city-search:hover {
     cursor: pointer;
     opacity: 50%;
 }
-/* .cityHistoryCont {
+
+#cityHistoryCont {
     display: flex;
     flex-direction: column;
-} */
+    margin-top: 2px;
+}
+
+#list-item {
+    margin-top: 2px;
+}
 
 .city-list-container {
     border: var(--border);
 }
 
-.results-panel {
-    margin: 10px 0 10px 0;
+.card {
     border: var(--border);
-    visibility: hidden;
 }
 
-.forcastFive {
+.results-panel {
     border: var(--border);
-    padding: 10px 0 0 10px;
+    visibility: hidden;
+    margin-top: 10px;
+}
+
+.forcastList {
+    border: var(--border);
+
 }
