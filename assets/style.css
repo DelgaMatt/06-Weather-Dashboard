@@ -7,18 +7,25 @@
 }
 
 header {
-    background-color: #2980b9;
+    /* background-color: #2980b9; */
     padding: 20px;
     border-bottom: solid black;
     color: white;
 }
 
-.search-panel,
+.search-panel {
+    text-align: center;
+    margin: 10px 0 0 0;
+    background-color: lightgray;
+    border: solid;
+}
+
 .search-box {
     text-align: center;
     margin: 10px 0 0 0;
     background-color: lightgray;
 }
+
 
 .list-item {
     list-style: none;
@@ -32,16 +39,6 @@ ul {
 .city-search:hover {
     cursor: pointer;
     opacity: 50%;
-}
-
-#cityHistoryCont {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2px;
-}
-
-#list-item {
-    margin-top: 2px;
 }
 
 .city-list-container {

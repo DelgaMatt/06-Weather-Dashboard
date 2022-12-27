@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="bg-primary">
         <div>
             <h1 class="text-center">Weather Dashboard</h1>
         </div>
@@ -33,26 +33,26 @@
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 search-panel">
                 <div class="search-box">
                     <h3>Search for a city:</h3>
-                    <form class="input-group justify-content-center">
+                    <form class="input-group justify-content-center pb-3 border-bottom border-dark">
                         <input type="search" class="form-control" id="cityName" placeholder="Portland..." />
                         <div class="form-outline">        
                             <button type="button" class="btn btn-primary" id="search"><i class="fas fa-search">🔍</i></button>
                         </div>            
                     </form>
                     <div>
-                        <div id="cityHistoryCont">
+                        <div id="cityHistoryCont" class="d-flex flex-column pt-2" >
                         </div>
                     </div>
                 </div>
             </div>
 
         <!-- Today city weather panel -->
-            <div class="col-12 col-sm-9 col-md-9 col-lg-9 results-panel">
+            <div class="col-12 col-sm-9 col-md-9 col-lg-9 results-panel text-white">
                 <div class="col weatherToday">
-                    <div class="card">
+                    <div class="card bg-secondary">
                         <h1 class="card-header todayCity"></h1>
                         <h4 class="card-header todayDate"></h4>
-                        <ul class="card-body bg-light weatherTodayBody">
+                        <ul class="card-body weatherTodayBody">
                             <li id="icon"><img id="wicon" src="" alt="Weather icon"></li>
                             <li class="temp"></li>
                             <li class="humidity"></li>
@@ -63,21 +63,20 @@
 
                     <h4 class="forcasthead text-center m-3"></h4>
                <!-- Forcast Cards -->
-                    
-                    <div class="forcastList row mt-5px justify-content-around">
-                        <div class="card">
+                    <div class="forcastList row justify-content-around">
+                        <div class="card bg-secondary mt-2">
                             <h4 class="card-header" id="day1date"></h4>
-                            <ul class="card-body bg-light h-100">
-                                <li><img id="day1icon"src="" alt="Weather icon"></li>
+                            <ul class="card-body ">
+                                <li><img id="day1icon" src="" alt="Weather icon"></li>
                                 <li id="day1temp"></li>
                                 <li id="day1humidity"></li>
                                 <li id="day1wind"></li>
                             </ul>
                         </div>
 
-                        <div class="card">
+                        <div class="card bg-secondary mt-2">
                             <h4 class="card-header" id="day2date"></h4>
-                            <ul class="card-body bg-light">
+                            <ul class="card-body">
                                 <li><img id="day2icon" src="" alt="Weather icon"></li>
                                 <li id="day2temp"></li>
                                 <li id="day2humidity"></li>
@@ -85,10 +84,9 @@
                             </ul>
                         </div>
 
-                        <div class="card">
-
+                        <div class="card bg-secondary mt-2">
                             <h4 class="card-header" id="day3date"></h4>
-                            <ul class="card-body bg-light">
+                            <ul class="card-body">
                                 <li><img id="day3icon" src="" alt="Weather icon"></li>
                                 <li id="day3cond"></li>
                                 <li id="day3temp"></li>
@@ -97,10 +95,9 @@
                             </ul>
                         </div>
 
-                        <div class="card">
-
+                        <div class="card bg-secondary mt-2">
                             <h4 class="card-header" id="day4date"></h4>
-                            <ul class="card-body bg-light">
+                            <ul class="card-body">
                                 <li><img id="day4icon" src="" alt="Weather icon"></li>
                                 <li id="day4temp"></li>
                                 <li id="day4humidity"></li>
@@ -108,10 +105,9 @@
                             </ul>
                         </div>
 
-                        <div class="card">
-
+                        <div class="card bg-secondary mt-2">
                             <h4 class="card-header" id="day5date"></h4>
-                            <ul class="card-body bg-light">
+                            <ul class="card-body">
                                 <li><img id="day5icon" src="" alt="Weather icon"></li>
                                 <li id="day5temp"></li>
                                 <li id="day5humidity"></li>

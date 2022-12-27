@@ -1,15 +1,9 @@
-//1. get weather api to function properly
-//2. get city weather to display on main card
-//3. fix button generation issue//get them to function as search queries
-//4. link forecast to/build forcast cards
-
 const history = JSON.parse(localStorage.getItem("history")) || [];
 const iconUrl = "http://openweathermap.org/img/w/";
 const cityHistCont = $("#cityHistoryCont");
 const searchButton = $("#search");
 
 const date = dayjs().format('dddd, MMMM DD YYYY');
-// var time = dayjs().format('h:mm:ss');
 
 //event listener for button, adding content onto local storage
 searchButton.on('click', function (event) {
@@ -55,7 +49,6 @@ function getCity(cityName) {
             console.log(data);
             console.log(latlon);
             weatherNow (lat, lon);
-            // getForcast (lat, lon);
         });
 };
 
@@ -105,7 +98,8 @@ function weatherNow(lat, lon) {
             $(".forcasthead").text("5 Day Forcast");
 
             let num = 1;
-            for (let index = 0; index < data.list.length; index+=8) {
+            for (let index = 0; index < data.list.length; index++) {
+                if(data.list[index].dt_txt.indexOf("15:00:00") !== -1) {
                 $("#day" + num + "date").text(dayjs().add(num, 'day').format("M/D/YYYY"));
                 
                 const iconcode = data.list[index].weather[0].icon;
@@ -124,16 +118,15 @@ function weatherNow(lat, lon) {
                 $("#day" + num + "wind").text("Wind Speeds: " + wind + "mph");
                 // console.log(wind);
 
-                
             num++;
-            }
+                }}
         })    
 };
 
 function cityHistory() {
     cityHistCont.html("");
     for (let index = 0; index < history.length; index++) {
-        let historyList = $(`<button id=${history[index]}>`).text(history[index]);
+        let historyList = $(`<button id=${history[index]} class="mt-1">`).text(history[index]);
         cityHistCont.append(historyList);
       
         $(`#${history[index]}`).on("click", function (event) {
