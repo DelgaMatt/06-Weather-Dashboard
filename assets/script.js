@@ -133,16 +133,16 @@ function weatherNow(lat, lon) {
 function cityHistory() {
     cityHistCont.html("");
     for (let index = 0; index < history.length; index++) {
-        let historyList = $("<button id='city-item'>").text(history[index]);
+        let historyList = $(`<button id=${history[index]}>`).text(history[index]);
         cityHistCont.append(historyList);
-    };
-
-      $("#city-item").on("click", function (event) {
+      
+        $(`#${history[index]}`).on("click", function (event) {
         event.preventDefault();
         let cityName = $(this).text();
         console.log("clicked " + this.textContent);
         getCity(cityName);
         }
       );
+    };
 };
  cityHistory();
