@@ -8,7 +8,7 @@ A weather dashboard that provides updating weather conditions for various cities
 
 Type city into the search bar and click the search icon. The city's name, the current date, temperature, humidity and wind speeds will display. The weather dashboard keeps a history of previously searched cities and are available to the user as clickable buttons. Upon clicking a city button, the dashboard once again presents weather data to the user.
 
-![127 0 0 1_5500__ (2)](https://user-images.githubusercontent.com/115049801/209421498-1296d5ee-ba96-4844-9f56-6049af0fadb2.png)
+![127 0 0 1_5500__ (3)](https://user-images.githubusercontent.com/115049801/209619204-c5cb6299-0f64-447d-9019-863b369b66a0.png)
 ## <ins>License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
