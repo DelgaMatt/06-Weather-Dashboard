@@ -1,4 +1,4 @@
-# 06-Weather-Dashboard
+# Weather-Dashboard
 
 ## <ins>Description
 A weather dashboard that provides updating weather conditions for various cities around the world. This application uses the Open Weather API to retrieve and display current and future weather data.

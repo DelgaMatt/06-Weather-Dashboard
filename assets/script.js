@@ -21,9 +21,9 @@ searchButton.on('click', function (event) {
     
     getCity(cityName);  
     $("#cityName").val("");
-    console.log(history);
-    console.log("cityName: ", cityName);
-    console.log(history);
+    // console.log(history);
+    // console.log("cityName: ", cityName);
+    // console.log(history);
     });
 
 //--------calls to weather API------>
@@ -40,14 +40,14 @@ function getCity(cityName) {
         .then(function (data) {
 
             const lat = data[0].lat;
-            console.log(lat);
+            // console.log(lat);
             const lon = data[0].lon;
-            console.log(lon);
+            // console.log(lon);
             var latlon = lat.toString() + ", " + lon.toString();
             window.localStorage.setItem(cityName, latlon);
 
-            console.log(data);
-            console.log(latlon);
+            // console.log(data);
+            // console.log(latlon);
             weatherNow (lat, lon);
         });
 };
