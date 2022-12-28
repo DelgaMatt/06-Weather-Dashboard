@@ -4,7 +4,7 @@
 A weather dashboard that provides updating weather conditions for various cities around the world. This application uses the Open Weather API to retrieve and display current and future weather data.
 
 ## <ins>Usage
-[Deployed Application](https://delgamatt.github.io/06-Weather-Dashboard/)
+[Deployed Application](https://delgamatt.github.io/Weather-Dashboard/)
 
 Type city into the search bar and click the search icon. The city's name, the current date, temperature, humidity and wind speeds will display. The weather dashboard keeps a history of previously searched cities and are available to the user as clickable buttons. Upon clicking a city button, the dashboard once again presents weather data to the user.
 
