@@ -1,5 +1,5 @@
 const history = JSON.parse(localStorage.getItem("history")) || [];
-const iconUrl = "http://openweathermap.org/img/w/";
+const iconUrl = "https://openweathermap.org/img/w/";
 const cityHistCont = $("#cityHistoryCont");
 const searchButton = $("#search");
 const date = dayjs().format('dddd, MMMM DD YYYY');
@@ -25,18 +25,16 @@ searchButton.on('click', function (event) {
 //--------calls to weather API------>
 function getCity(cityName) {
     //----- geocoding for lat and lon of city----->
-    let geoCityApi = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=25c2936adbc148c96a60f0af93156bc8";
+    let geoCityApi = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&appid=25c2936adbc148c96a60f0af93156bc8";
     fetch(geoCityApi)
         .then(function (response) {
         return response.json();
-        
         })
         .then(function (data) {
             const lat = data[0].lat;
             const lon = data[0].lon;
             var latlon = lat.toString() + ", " + lon.toString();
             window.localStorage.setItem(cityName, latlon);
-
             weatherNow (lat, lon);
         });
 };
