@@ -2,7 +2,6 @@ const history = JSON.parse(localStorage.getItem("history")) || [];
 const iconUrl = "http://openweathermap.org/img/w/";
 const cityHistCont = $("#cityHistoryCont");
 const searchButton = $("#search");
-
 const date = dayjs().format('dddd, MMMM DD YYYY');
 
 //event listener for button, adding content onto local storage
@@ -95,7 +94,6 @@ function weatherNow(lat, lon) {
 
                 const wind = data.list[index].wind.speed;
                 $("#day" + num + "wind").text("Wind Speeds: " + wind + "mph");
-
             num++;
                 }}
         })    
